@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"time"
+	"unsafe"
 )
 
 const (
@@ -59,4 +60,3 @@ func main() {
 	fmt.Println("Memory Address of Age:", memoryAddress)
 	fmt.Println("Last Error:", lastError)
 }
-
