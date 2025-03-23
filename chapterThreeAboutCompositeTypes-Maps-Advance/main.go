@@ -45,12 +45,31 @@ func main() {
 	
 	friendsIdMappedToTheFirstNameLastNameInitials:= make(map[int]string)
 
-	friendsIdMappedToTheFirstNameLastNameInitials[10] = "P.Mu"
-	friendsIdMappedToTheFirstNameLastNameInitials[20] = "C.De"
-	friendsIdMappedToTheFirstNameLastNameInitials[30] = "D.Du"
-	friendsIdMappedToTheFirstNameLastNameInitials[40] = "L.Ja"
-	friendsIdMappedToTheFirstNameLastNameInitials[50] = "F.Sq"
-	friendsIdMappedToTheFirstNameLastNameInitials[60] = "B.Ol"
+	friendsIdMappedToTheFirstNameLastNameInitials[1] = "P.Mu"
+	friendsIdMappedToTheFirstNameLastNameInitials[2] = "C.De"
+	friendsIdMappedToTheFirstNameLastNameInitials[3] = "D.Du"
+	friendsIdMappedToTheFirstNameLastNameInitials[4] = "L.Ja"
+	friendsIdMappedToTheFirstNameLastNameInitials[5] = "F.Sq"
+	friendsIdMappedToTheFirstNameLastNameInitials[6] = "B.Ol"
+	
+	friendNameInitialsWithTheTeamTheySupport:= map[string]string{
+		"P.Mu":"Manchester United",
+		"D.Du":"Arsenal",
+		"F.Sq":"Manchester United",
+	}
+	friendNameInitialsWithoutATeamToSupport:= map[string]string{
+		"C.De":"",
+		"L.Ja":"",
+		"B.Ol":"",
+
+	}
+
+	fmt.Printf("The only friends with teams that they support: %+v\n", friendNameInitialsWithTheTeamTheySupport)
+
+	delete(friendNameInitialsWithoutATeamToSupport, "C.De")
+        delete(friendNameInitialsWithoutATeamToSupport, "L.Ja")
+        delete(friendNameInitialsWithoutATeamToSupport, "B.Ol")
+
 	
 	englishTeamNameAndStadiumName:= map[string]string{
 		"Arsenal":"Emirates Stadium",
@@ -96,18 +115,7 @@ func main() {
 		"United London Stadium":"London",
 		"Wanderers Molineux Stadium":"Wolverhampton",
 	}
-
-friendNameInitialsWithTheTeamTheySupport:= map[string]string{
-		"P.Mu":"Manchester United",
-		"D.Du":"Arsenal",
-		"F.Sq":"Manchester United",
-	}
-friendNameInitialsWithoutATeamToSupport:= map[string]string{
-		"C.De":"",
-		"L.Ja":"",
-		"B.Ol":"",
-	}
-teamIdWithTeamName:= map[int]string{
+	teamIdWithTeamName:= map[int]string{
 		1:"Arsenal",
 		2:"Aston Villa",
 		3:"AFC Bournemouth",
@@ -137,8 +145,8 @@ teamIdWithTeamName:= map[int]string{
 	fmt.Printf("I am always asking when: %c\n", favoriteEmoji)
         fmt.Printf("Combined First and Last Name Initials of friends %v\n", friendsFirstNameLastNameInitialsCombined)
 	fmt.Printf("Friends ID mapped to First.Last Names: %+v\n", friendsIdMappedToTheFirstNameLastNameInitials)
-	fmt.Printf("These friends have teams that they support and they are: %+v\n", friendNameInitialsWithTheTeamTheySupport)
-	fmt.Printf("These friends don't have teams that they support and they are: %+v\n", friendNameInitialsWithoutATeamToSupport)
+	fmt.Printf("Added two new friends to the initial three with teams that they support: %+v\n", friendNameInitialsWithTheTeamTheySupport)
+	fmt.Printf("These friends are the only ones' that have a team that they are: %+v\n", friendNameInitialsWithTheTeamTheySupport)
         fmt.Printf("EPL Team and Home Stadium: %+v\n", englishTeamNameAndStadiumName)
 	fmt.Printf("EPL Team and City: %+v\n", englishTeamStadiumNameAndLocation) 
 	fmt.Printf("Team Id and Name: %+v\n", teamIdWithTeamName)
