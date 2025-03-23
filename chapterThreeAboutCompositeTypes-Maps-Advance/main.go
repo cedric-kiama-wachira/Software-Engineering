@@ -54,34 +54,34 @@ func main() {
 	
 	friendsIdMappedToTheFirstNameLastNameInitials:= make(map[int]string)
 
-	friendsIdMappedToTheFirstNameLastNameInitials[1] = "P.Mu"
-	friendsIdMappedToTheFirstNameLastNameInitials[2] = "C.De"
-	friendsIdMappedToTheFirstNameLastNameInitials[3] = "D.Du"
-	friendsIdMappedToTheFirstNameLastNameInitials[4] = "L.Ja"
-	friendsIdMappedToTheFirstNameLastNameInitials[5] = "F.Sq"
-	friendsIdMappedToTheFirstNameLastNameInitials[6] = "B.Ol"
+	friendsIdMappedToTheFirstNameLastNameInitials[10] = "P.Mu"
+	friendsIdMappedToTheFirstNameLastNameInitials[20] = "C.De"
+	friendsIdMappedToTheFirstNameLastNameInitials[30] = "D.Du"
+	friendsIdMappedToTheFirstNameLastNameInitials[40] = "L.Ja"
+	friendsIdMappedToTheFirstNameLastNameInitials[50] = "F.Sq"
+	friendsIdMappedToTheFirstNameLastNameInitials[60] = "B.Ol"
 	
 	englishTeamNameAndStadiumName:= map[string]string{
-			"Arsenal":"Emirates Stadium",
-			"Aston Villa":"Villa Park",
-			"AFC Bournemouth":"Vitality Stadium",
-			"Brentford":"Gtech Community Stadium",
-			"Brighton & Hove Albion":"American Express Stadium",
-			"Chelsea":"Stamford Bridge",
-			"Crystal Palace":"Selhurst Park",
-			"Everton":"Goodison Park",
-			"Fulham":"Craven Cottage",
-			"Ipswich Town":"Portman Road",
-			"Leicester City":"King Power Stadium",
-			"Liverpool":"Anfield",
-			"Manchester City":"Etihad Stadium",
-			"Manchester United":"Old Trafford",
-			"Newcastle United":"St James Park",
-			"Nottingham Forest":"City Ground",
-			"Southampton":"St Mary's Stadium",
-			"Tottenham Hotspur":"Tottenham Hotspur Stadium",
-			"West Ham United":"London Stadium",
-			"Wolverhampton Wanderers":"Molineux Stadium",
+		"Arsenal":"Emirates Stadium",
+		"Aston Villa":"Villa Park",
+		"AFC Bournemouth":"Vitality Stadium",
+		"Brentford":"Gtech Community Stadium",
+		"Brighton & Hove Albion":"American Express Stadium",
+		"Chelsea":"Stamford Bridge",
+		"Crystal Palace":"Selhurst Park",
+		"Everton":"Goodison Park",
+		"Fulham":"Craven Cottage",
+		"Ipswich Town":"Portman Road",
+		"Leicester City":"King Power Stadium",
+		"Liverpool":"Anfield",
+		"Manchester City":"Etihad Stadium",
+		"Manchester United":"Old Trafford",
+		"Newcastle United":"St James Park",
+		"Nottingham Forest":"City Ground",
+		"Southampton":"St Mary's Stadium",
+		"Tottenham Hotspur":"Tottenham Hotspur Stadium",
+		"West Ham United":"London Stadium",
+		"Wolverhampton Wanderers":"Molineux Stadium",
 	}
 	englishTeamStadiumNameAndLocation:= map[string]string{
 		"Emirates Stadium":"London",
@@ -108,34 +108,35 @@ func main() {
 
 friendNameInitialsWithTheTeamTheySupport:= map[string]string{
 		"P.Mu":"Manchester United",
-		"C.De":"",
 		"D.Du":"Arsenal",
-		"L.Ja":"",
 		"F.Sq":"Manchester United",
+	}
+friendNameInitialsWithoutATeamToSupport:= map[string]string{
+		"C.De":"",
+		"L.Ja":"",
 		"B.Ol":"",
 	}
-
 teamIdWithTeamName:= map[int]string{
-		10:"Arsenal",
-		20:"Aston Villa",
-		30:"AFC Bournemouth",
-		40:"Brentford",
-		50:"Brighton & Hove Albion",
-		60:"Chelsea",
-		70:"Crystal Palace",
-		80:"Everton",
-		90:"Fulham",
-		100:"Ipswich Town",
-		110:"Leicester City",
-		120:"Liverpool",
-		130:"Manchester City",
-		140:"Manchester United",
-		150:"Newcastle United",
-		160:"Nottingham Forest",
-		170:"Southampton",
-		180:"Tottenham Hotspur",
-		190:"West Ham United",
-		200:"Wolverhampton Wanderers",
+		1:"Arsenal",
+		2:"Aston Villa",
+		3:"AFC Bournemouth",
+		4:"Brentford",
+		5:"Brighton & Hove Albion",
+		6:"Chelsea",
+		7:"Crystal Palace",
+		8:"Everton",
+		9:"Fulham",
+		10:"Ipswich Town",
+		11:"Leicester City",
+		12:"Liverpool",
+		13:"Manchester City",
+		14:"Manchester United",
+		15:"Newcastle United",
+		16:"Nottingham Forest",
+		17:"Southampton",
+		18:"Tottenham Hotspur",
+		19:"West Ham United",
+		20:"Wolverhampton Wanderers",
 }
 
 	fmt.Printf("Welcome to my friend's app, my names are: %v \n", fullName)
