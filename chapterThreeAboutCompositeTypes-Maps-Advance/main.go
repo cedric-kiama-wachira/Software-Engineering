@@ -25,13 +25,7 @@ type LifeInSummary struct {
     IsMorningPerson bool
 }
 
-type LifeInDetail struct {
-    FirstFriendsNameInitials  string
-}
 
-func (lifeInDetail LifeInDetail) getLifeInDetail() string{
-	return  lifeInDetail.FirstFriendsNameInitials
-}
 func main() {
 	lifeInSummary := LifeInSummary{
 		TotalFriends: 6,
@@ -40,9 +34,6 @@ func main() {
 		IsMorningPerson: true,
 	}
 
-	lifeInDetail := LifeInDetail{
-		FirstFriendsNameInitials:  "P.Mu",
-	}
         friendsFirstNameLastNameInitialsCombined := map[string]string{
 		"P": "Mu",
 		"L": "Ja",
@@ -144,12 +135,12 @@ teamIdWithTeamName:= map[int]string{
 	fmt.Printf("My Favorite quote is: %v\n", favoriteQuote)
 	fmt.Printf("I am a football fan and, my favorite team is: %v\n", myFavoriteTeam )
 	fmt.Printf("I am always asking when: %c\n", favoriteEmoji)
-	fmt.Printf("This will be improved: %s\n", lifeInDetail.getLifeInDetail())
         fmt.Printf("Combined First and Last Name Initials of friends %v\n", friendsFirstNameLastNameInitialsCombined)
 	fmt.Printf("Friends ID mapped to First.Last Names: %+v\n", friendsIdMappedToTheFirstNameLastNameInitials)
+	fmt.Printf("These friends have teams that they support and they are: %+v\n", friendNameInitialsWithTheTeamTheySupport)
+	fmt.Printf("These friends don't have teams that they support and they are: %+v\n", friendNameInitialsWithoutATeamToSupport)
         fmt.Printf("EPL Team and Home Stadium: %+v\n", englishTeamNameAndStadiumName)
 	fmt.Printf("EPL Team and City: %+v\n", englishTeamStadiumNameAndLocation) 
-	fmt.Printf("My Friend and the team they support: %+v\n", friendNameInitialsWithTheTeamTheySupport) 
 	fmt.Printf("Team Id and Name: %+v\n", teamIdWithTeamName)
 	fmt.Printf("This sums up who I am: %+v\n", lifeInSummary)
 
