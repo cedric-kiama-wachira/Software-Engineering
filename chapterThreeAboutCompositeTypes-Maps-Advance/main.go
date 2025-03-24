@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 )
 const (
 	fullName       string  = "Cedric K. Wachira"			// Full name
@@ -184,9 +185,34 @@ func main() {
 	fmt.Printf("Before slicing the list looked like this: %+v\n", friendsIdMappedToTheFirstNameLastNameInitials)
         
         friendsIdSliced := []int{1,2,3,4,5,6,7,8}
-        friendsFirstNameLastNameInitialsSliced := make([]string,8)
 
-	fmt.Println("After slicing, it looks like this: \n",friendsIdSliced)
-	fmt.Println("This is now defined and initialized as empty: \n",friendsFirstNameLastNameInitialsSliced)
+	fmt.Println("Intro to slice types, the hard coded way: \n",friendsIdSliced)
 
+	fmt.Println("Fixing the data disconnect as nothing has been achieved by our Initial slice attempt\n")
+
+	var friendInitials []string
+	for _, initials := range friendsIdMappedToTheFirstNameLastNameInitials {
+		friendInitials = append(friendInitials, initials)
+	}
+
+	var supporters []string
+	for initials := range friendNameInitialsWithTheTeamTheySupport {
+		supporters = append(supporters, initials)
+	}
+
+	var teams []string
+	seenTeams := make(map[string]bool)
+	for _, team := range friendNameInitialsWithTheTeamTheySupport {
+		if !seenTeams[team] {
+			teams = append(teams, team)
+			seenTeams[team] = true
+		}
+	}
+        
+	sort.Strings(friendInitials)
+	fmt.Println("All Friends Initials:", friendInitials)
+	sort.Strings(supporters)
+	fmt.Println("Friends Who Support a Team:", supporters)
+	sort.Strings(teams)
+	fmt.Println("Distinct Teams Supported:", teams)
 }
