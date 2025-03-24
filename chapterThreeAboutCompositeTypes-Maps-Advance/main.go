@@ -19,58 +19,24 @@ var (
 )
 
 type LifeInSummary struct {
-    TotalFriends    int
+    InitialFriendsList    int
     DailyCoffees    uint8
     TotalBooksRead  uint32
     IsMorningPerson bool
+    UpdatedFriendsList int
 }
 
 
 func main() {
-	lifeInSummary := LifeInSummary{
-		TotalFriends: 6,
-		DailyCoffees: 2,
-		TotalBooksRead: 20,
-		IsMorningPerson: true,
-	}
 
-        friendsFirstNameLastNameInitialsCombined := map[string]string{
-		"P": "Mu",
-		"L": "Ja",
-		"F": "Sq",
-		"D": "Du",
-		"C": "De",
-		"B": "Ol",
-	}
-	
-	friendsIdMappedToTheFirstNameLastNameInitials:= make(map[int]string)
+	fmt.Printf("Welcome to my friend's app, my names are: %v \n", fullName)
+	fmt.Printf("You can call me: %v\n", referToMeAs)
+	fmt.Printf("My Favorite quote is: %v\n", favoriteQuote)
+	fmt.Printf("I am a football fan and, my favorite team is: %v\n", myFavoriteTeam )
+	fmt.Printf("I am always asking when: %c\n", favoriteEmoji)
 
-	friendsIdMappedToTheFirstNameLastNameInitials[1] = "P.Mu"
-	friendsIdMappedToTheFirstNameLastNameInitials[2] = "C.De"
-	friendsIdMappedToTheFirstNameLastNameInitials[3] = "D.Du"
-	friendsIdMappedToTheFirstNameLastNameInitials[4] = "L.Ja"
-	friendsIdMappedToTheFirstNameLastNameInitials[5] = "F.Sq"
-	friendsIdMappedToTheFirstNameLastNameInitials[6] = "B.Ol"
-	
-	friendNameInitialsWithTheTeamTheySupport:= map[string]string{
-		"P.Mu":"Manchester United",
-		"D.Du":"Arsenal",
-		"F.Sq":"Manchester United",
-	}
-	friendNameInitialsWithoutATeamToSupport:= map[string]string{
-		"C.De":"",
-		"L.Ja":"",
-		"B.Ol":"",
+	fmt.Printf("Adding more data points, I want to show my list of friends with teams that they support \n")
 
-	}
-
-	fmt.Printf("The only friends with teams that they support: %+v\n", friendNameInitialsWithTheTeamTheySupport)
-
-	delete(friendNameInitialsWithoutATeamToSupport, "C.De")
-        delete(friendNameInitialsWithoutATeamToSupport, "L.Ja")
-        delete(friendNameInitialsWithoutATeamToSupport, "B.Ol")
-
-	
 	englishTeamNameAndStadiumName:= map[string]string{
 		"Arsenal":"Emirates Stadium",
 		"Aston Villa":"Villa Park",
@@ -93,7 +59,10 @@ func main() {
 		"West Ham United":"London Stadium",
 		"Wolverhampton Wanderers":"Molineux Stadium",
 	}
-	englishTeamStadiumNameAndLocation:= map[string]string{
+
+	fmt.Printf("EPL Team and Home Stadium: %+v\n", englishTeamNameAndStadiumName)
+
+        englishTeamStadiumNameAndLocation:= map[string]string{
 		"Emirates Stadium":"London",
 		"Villa Park":"Birmingham",
 		"Vitality Stadium":"Bournemouth",
@@ -115,6 +84,9 @@ func main() {
 		"United London Stadium":"London",
 		"Wanderers Molineux Stadium":"Wolverhampton",
 	}
+
+	fmt.Printf("EPL Team and City: %+v\n", englishTeamStadiumNameAndLocation)
+
 	teamIdWithTeamName:= map[int]string{
 		1:"Arsenal",
 		2:"Aston Villa",
@@ -136,20 +108,85 @@ func main() {
 		18:"Tottenham Hotspur",
 		19:"West Ham United",
 		20:"Wolverhampton Wanderers",
-}
+        }
 
-	fmt.Printf("Welcome to my friend's app, my names are: %v \n", fullName)
-	fmt.Printf("You can call me: %v\n", referToMeAs)
-	fmt.Printf("My Favorite quote is: %v\n", favoriteQuote)
-	fmt.Printf("I am a football fan and, my favorite team is: %v\n", myFavoriteTeam )
-	fmt.Printf("I am always asking when: %c\n", favoriteEmoji)
-        fmt.Printf("Combined First and Last Name Initials of friends %v\n", friendsFirstNameLastNameInitialsCombined)
-	fmt.Printf("Friends ID mapped to First.Last Names: %+v\n", friendsIdMappedToTheFirstNameLastNameInitials)
-	fmt.Printf("Added two new friends to the initial three with teams that they support: %+v\n", friendNameInitialsWithTheTeamTheySupport)
-	fmt.Printf("These friends are the only ones' that have a team that they are: %+v\n", friendNameInitialsWithTheTeamTheySupport)
-        fmt.Printf("EPL Team and Home Stadium: %+v\n", englishTeamNameAndStadiumName)
-	fmt.Printf("EPL Team and City: %+v\n", englishTeamStadiumNameAndLocation) 
-	fmt.Printf("Team Id and Name: %+v\n", teamIdWithTeamName)
+        fmt.Printf("Team Id and Name: %+v\n", teamIdWithTeamName)
+
+        friendsFirstNameLastNameInitialsCombined := map[string]string{
+		"P": "Mu",
+		"L": "Ja",
+		"F": "Sq",
+		"D": "Du",
+		"C": "De",
+		"B": "Ol",
+	}
+	
+	fmt.Printf("Combined First and Last Name Initials of friends %v\n", friendsFirstNameLastNameInitialsCombined)
+
+	friendsIdMappedToTheFirstNameLastNameInitials:= make(map[int]string)
+	friendsIdMappedToTheFirstNameLastNameInitials[1] = "P.Mu"
+	friendsIdMappedToTheFirstNameLastNameInitials[2] = "C.De"
+	friendsIdMappedToTheFirstNameLastNameInitials[3] = "D.Du"
+	friendsIdMappedToTheFirstNameLastNameInitials[4] = "L.Ja"
+	friendsIdMappedToTheFirstNameLastNameInitials[5] = "F.Sq"
+	friendsIdMappedToTheFirstNameLastNameInitials[6] = "B.Ol"
+	
+	fmt.Printf("Initial MAP Range for Friends ID mapped to First.Last Names: \n")
+
+	for firstKeyK, firstValueV := range friendsIdMappedToTheFirstNameLastNameInitials{
+		fmt.Printf("The ID is : %d and the Name Initials are : %s\n", firstKeyK, firstValueV)
+	} 
+	
+	lifeInSummary := LifeInSummary{
+		InitialFriendsList: 6,
+		DailyCoffees: 2,
+		TotalBooksRead: 20,
+		IsMorningPerson: true,
+		UpdatedFriendsList: 8,
+	}
+	
 	fmt.Printf("This sums up who I am: %+v\n", lifeInSummary)
+        
+	fmt.Printf("Lets Polish this further, I figured some friends have teams that they support while others don't. \n")
+
+	friendsIdMappedToTheFirstNameLastNameInitials[7] = "Wa.D"
+	friendsIdMappedToTheFirstNameLastNameInitials[8] = "Mb.E"
+
+	fmt.Printf("Added two new friends to the list, who I know have a team that they support, now we have eight friends with and ID: %+v\n", friendsIdMappedToTheFirstNameLastNameInitials)
+
+        fmt.Printf("Mapping all that have a team they support, leaving out those that don't. \n")
+
+	friendNameInitialsWithTheTeamTheySupport:= make(map[string]string)
+		friendNameInitialsWithTheTeamTheySupport["P.Mu"]="Manchester United"
+		friendNameInitialsWithTheTeamTheySupport["D.Du"]="Arsenal"
+		friendNameInitialsWithTheTeamTheySupport["F.Sq"]="Manchester United"
+		friendNameInitialsWithTheTeamTheySupport["Wa.D"]="Arsenal"
+		friendNameInitialsWithTheTeamTheySupport["Mb.E"]="Manchester United"
+
+	for secondKeyK, secondValueV := range friendNameInitialsWithTheTeamTheySupport{
+		fmt.Printf("The name Initials are : %s and the team they support are : %s\n", secondKeyK, secondValueV)
+	}	
+
+	friendNameInitialsWithoutATeamTheySupport:= map[string]string{
+		"C.De":"",
+		"L.Ja":"",
+		"B.Ol":"",
+	}
+
+	fmt.Printf("I want to show friends without a team that they support before deleting their respective variables, here is the list %+v\n", friendNameInitialsWithoutATeamTheySupport)
+	delete(friendNameInitialsWithoutATeamTheySupport, "C.De")
+	delete(friendNameInitialsWithoutATeamTheySupport, "L.Ja")
+	delete(friendNameInitialsWithoutATeamTheySupport, "B.Ol")
+	
+	fmt.Printf("Deleted the 'containers/variables' for the three friends without a team that they support, they are empty %+v\n", friendNameInitialsWithoutATeamTheySupport)
+
+	fmt.Printf("Adding slices to my friendsIdMappedToTheFirstNameLastNameInitials map \n")
+	fmt.Printf("Before slicing the list looked like this: %+v\n", friendsIdMappedToTheFirstNameLastNameInitials)
+        
+        friendsIdSliced := []int{1,2,3,4,5,6,7,8}
+        friendsFirstNameLastNameInitialsSliced := make([]string,8)
+
+	fmt.Println("After slicing, it looks like this: \n",friendsIdSliced)
+	fmt.Println("This is now defined and initialized as empty: \n",friendsFirstNameLastNameInitialsSliced)
 
 }
