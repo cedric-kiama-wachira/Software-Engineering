@@ -184,11 +184,11 @@ func main() {
 	fmt.Printf("Adding slices to my friendsIdMappedToTheFirstNameLastNameInitials map \n")
 	fmt.Printf("Before slicing the list looked like this: %+v\n", friendsIdMappedToTheFirstNameLastNameInitials)
         
-        friendsIdSliced := []int{1,2,3,4,5,6,7,8}
+        //friendsIdSliced := []int{1,2,3,4,5,6,7,8}
 
-	fmt.Println("Intro to slice types, the hard coded way: \n",friendsIdSliced)
+	//fmt.Println("Intro to slice types, the hard coded way: \n",friendsIdSliced)
 
-	fmt.Println("Fixing the data disconnect as nothing has been achieved by our Initial slice attempt\n")
+	//fmt.Println("Fixing the data disconnect as nothing has been achieved by our Initial slice attempt\n")
 
 	var friendInitials []string
 	for _, initials := range friendsIdMappedToTheFirstNameLastNameInitials {
@@ -213,6 +213,5 @@ func main() {
 	fmt.Println("All Friends Initials:", friendInitials)
 	sort.Strings(supporters)
 	fmt.Println("Friends Who Support a Team:", supporters)
-	sort.Strings(teams)
 	fmt.Println("Distinct Teams Supported:", teams)
 }
