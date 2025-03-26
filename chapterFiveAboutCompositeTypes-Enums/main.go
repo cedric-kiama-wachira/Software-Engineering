@@ -124,6 +124,20 @@ const(
 	SupportedTeam 
 )
 
+var friendSupport = map[FriendId]struct {
+	Status SupportStatus
+	Team   TeamId
+	}{
+		PMu:{SupportedTeam, ManchesterUnited},
+		CDe:{NoTeam,0},
+		DDu:{SupportedTeam, Arsenal},
+		LJa:{NoTeam,0},
+		FSq:{SupportedTeam, ManchesterUnited},
+		BOl:{NoTeam,0},
+		WaD:{SupportedTeam, Arsenal},
+		MbE:{SupportedTeam, ManchesterUnited},
+	}
+
 func (t TeamId) String() string{
 	return teamNames[t]
 }
@@ -132,13 +146,45 @@ func (f FriendId) String() string{
 	return friendNames[f]
 }
 
+func (s SupportStatus) String() string{
+	switch s{
+	case NoTeam:
+	return "No Team"
+	case SupportedTeam:
+	return "Supports a team"
+	default:
+	return "Unknown"
+	}
+}
+
+
 func main(){
 	fmt.Println("Testing\n")
-	fmt.Println(Arsenal,"= Id for Arsenal.\n",ManchesterUnited,"= Id for Manchester United.\n",WestHamUnited,"= Id for WestHam United.\n",WolverhamptonWanderers,"= Id for Wolverhampton Wanderers.\n",PMu,"= Id for PMu user.\n",CDe,"= Id for CDe user.\n",WaD,"= Id for WaD user.\n and",MbE,"= Id for MbE user.\n")
-	fmt.Println("Testing Done, time for some logic...\n")
+	
+	fmt.Println("Let's get the Team Name mapped to the Team ID\n")
+	fmt.Println(TeamId(Arsenal),"team ID is", Arsenal,"\n",
+		    TeamId(ManchesterUnited),"team ID is", ManchesterUnited,"\n",
+		    TeamId(WestHamUnited),"team ID is", WestHamUnited,"\n",
+		    TeamId(WolverhamptonWanderers),"team ID is",WolverhamptonWanderers,"\n")
 
+	fmt.Println("Testing done, it's time for some logic, I'll pair a team, it's stadium and location...\n")
 	for team, stadium := range eplTeamWithStadiumName{
 		location := eplStadiumNameAndLocation[stadium]
 		fmt.Printf("%s plays at %s, located in %s\n", team, stadium, location)
+	}
+
+	fmt.Println("Let's see if the IDs assigned are properly mapped to my friends correctly\n")
+	fmt.Println(PMu,"= Id for my friend PMu.\n",
+		    CDe,"= Id for my friend CDe.\n",
+		    WaD,"= Id for my friend WaD.\n",
+		    "and",MbE,"= Id for my friend MbE.\n")
+
+	fmt.Println("I'll now check which teams my friends support\n")
+	for friend, support := range friendSupport {
+		if support.Status == SupportedTeam {
+			fmt.Printf("%s supports %s\n", friend, support.Team)
+		} else {
+			fmt.Printf("%s does not support any team.\n", friend)
+		}
 	}
 }
