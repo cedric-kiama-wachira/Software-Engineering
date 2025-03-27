@@ -162,10 +162,11 @@ func main(){
 	fmt.Println("Testing\n")
 	
 	fmt.Println("Let's get the Team Name mapped to the Team ID\n")
-	fmt.Println(TeamId(Arsenal),"team ID is", Arsenal,"\n",
-		    TeamId(ManchesterUnited),"team ID is", ManchesterUnited,"\n",
-		    TeamId(WestHamUnited),"team ID is", WestHamUnited,"\n",
-		    TeamId(WolverhamptonWanderers),"team ID is",WolverhamptonWanderers,"\n")
+	//fmt.Println(TeamId(Arsenal),"team ID is", Arsenal,"\n",
+	fmt.Println(Arsenal,"is the ID of Team", TeamId(Arsenal),"\n",
+		    ManchesterUnited,"is the ID of Team", TeamId(ManchesterUnited),"\n",
+		    WestHamUnited,"is the ID of team", TeamId(WestHamUnited),"\n",
+		    WolverhamptonWanderers,"is the ID of team",TeamId(WolverhamptonWanderers),"\n")
 
 	fmt.Println("Testing done, it's time for some logic, I'll pair a team, it's stadium and location...\n")
 	for team, stadium := range eplTeamWithStadiumName{
