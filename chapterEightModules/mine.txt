@@ -1,0 +1,3 @@
+Doing a research to evolve my Golang(go) knowledge and experience.
+
+I will start the project with a very small data point for a team that I have been supporting for a very long time.
