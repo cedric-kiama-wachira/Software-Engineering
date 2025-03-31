@@ -15,4 +15,4 @@ $ ssh -T git@github.com
 $ mkdir Golang && cd Golang
 $ git clone git@github.com:cedric-kiama-wachira/Software-Engineering.git
 
-
+fIXING mAIL SERVVER
