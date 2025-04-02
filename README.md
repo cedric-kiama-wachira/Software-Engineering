@@ -16,3 +16,4 @@ $ mkdir Golang && cd Golang
 $ git clone git@github.com:cedric-kiama-wachira/Software-Engineering.git
 
 fIXING mAIL SERVER, sOURCE BUILD DIDNT WORK I WILL DO A CLEANUP TODAY AND START FROM SCRATCH.
+Decided to setup an Ubuntu 20.04 separately to install mail Server
