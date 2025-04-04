@@ -18,3 +18,5 @@ $ git clone git@github.com:cedric-kiama-wachira/Software-Engineering.git
 fIXING mAIL SERVER, sOURCE BUILD DIDNT WORK I WILL DO A CLEANUP TODAY AND START FROM SCRATCH.
 Decided to setup an Ubuntu 20.04 separately to install mail Server
 Mail server is working as it should.
+Now ensuring the mail server has enterprise grade security to it.
+
