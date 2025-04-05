@@ -19,4 +19,6 @@ fIXING mAIL SERVER, sOURCE BUILD DIDNT WORK I WILL DO A CLEANUP TODAY AND START 
 Decided to setup an Ubuntu 20.04 separately to install mail Server
 Mail server is working as it should.
 Now ensuring the mail server has enterprise grade security to it.
+I think now the Mail and Web Server setup are 95% ready. Will fix it to attain 100% readiness in the comming weeks.
+
 
