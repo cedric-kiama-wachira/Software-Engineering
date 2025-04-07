@@ -21,6 +21,7 @@ Mail server is working as it should.
 Now ensuring the mail server has enterprise grade security to it.
 I think now the Mail and Web Server setup are 95% ready. Will fix it to attain 100% readiness in the comming weeks.
 Reading about MCP IN ai.
+Setting up an ETCD node for My K8s cluster on Hetzner cloud.
 
 
 
