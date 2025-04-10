@@ -24,5 +24,5 @@ Reading about MCP IN ai.
 Setting up an ETCD node for My K8s cluster on Hetzner cloud.
 Setting up HAProxy and SSl certificate for it
 Setting Up SSl via letsencrypt for ETCD nodes, hope it works.
-
+COnfiguring SSL services further.
 
