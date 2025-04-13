@@ -26,3 +26,4 @@ Setting up HAProxy and SSl certificate for it
 Setting Up SSl via letsencrypt for ETCD nodes, hope it works.
 COnfiguring SSL services further.
 Letsencrypt for ETCD doesn't work, reverting to using Self Signed and see how to combine that with LetsEncrypt certificates.
+Changing the configs for ssl again.
