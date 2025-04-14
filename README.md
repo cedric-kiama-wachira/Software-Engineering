@@ -27,3 +27,26 @@ Setting Up SSl via letsencrypt for ETCD nodes, hope it works.
 COnfiguring SSL services further.
 Letsencrypt for ETCD doesn't work, reverting to using Self Signed and see how to combine that with LetsEncrypt certificates.
 Changing the configs for ssl again.
+
+Time to get this exams:
+
+Curriculum
+
+Open Source Curriculum for CNCF Certification Courses
+
+This is the latest version of the curriculum for the following CNCF exams:
+
+    Certified Kubernetes Administrator (CKA)
+    Certified Kubernetes Application Developer (CKAD)
+    Certified Kubernetes Security Specialist (CKS)
+    Certified GitOps Associate (CGOA)
+    Certified Argo Project Associate (CAPA)
+    Certified Backstage Associate (CBA)
+    Cilium Certified Associate (CCA)
+    Istio Certified Associate (ICA)
+    Kyverno Certified Associate (KCA)
+    Kubernetes and Cloud Native Associate (KCNA)
+    Kubernetes and Cloud Native Security Associate (KCSA)
+    OpenTelemetry Certified Associate (OTCA)
+    Prometheus Certified Associate (PCA)
+
