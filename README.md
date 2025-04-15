@@ -49,4 +49,4 @@ This is the latest version of the curriculum for the following CNCF exams:
     Kubernetes and Cloud Native Security Associate (KCSA)
     OpenTelemetry Certified Associate (OTCA)
     Prometheus Certified Associate (PCA)
-
+---
