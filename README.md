@@ -50,3 +50,4 @@ This is the latest version of the curriculum for the following CNCF exams:
     OpenTelemetry Certified Associate (OTCA)
     Prometheus Certified Associate (PCA)
 -------lB SAME REGION
+Getting the Network and Firewall plus DNS settings Correct
