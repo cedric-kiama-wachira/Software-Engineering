@@ -51,5 +51,5 @@ This is the latest version of the curriculum for the following CNCF exams:
     Prometheus Certified Associate (PCA)
 -------lB SAME REGION
 Getting the Network and Firewall plus DNS settings Correct
-Installed K8s - need to fix Cilium
--- sTILL FIXINg Cilium
+Installed K8s - need to fix Ciliuim
+--Now there is an issue with a 
