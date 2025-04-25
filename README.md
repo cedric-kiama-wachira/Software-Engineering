@@ -58,3 +58,5 @@ Fixed it moving to add other components to my Kubernetes cluster.
 
 Starting with the Kubernetes Dashboard, then rook-ceph for storage.
 Rook-Ceph Setup DOne will activate the rest of its components tomorrow.
+
+Added ingress-nginx and cert manager will add Gitops Stack(ArgoCd/FluxCd) plus monitoring stack
