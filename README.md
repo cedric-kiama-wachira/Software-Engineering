@@ -60,3 +60,5 @@ Starting with the Kubernetes Dashboard, then rook-ceph for storage.
 Rook-Ceph Setup DOne will activate the rest of its components tomorrow.
 
 Added ingress-nginx and cert manager will add Gitops Stack(ArgoCd/FluxCd) plus monitoring stack
+
+Another day confused with the next step
