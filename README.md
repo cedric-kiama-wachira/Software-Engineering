@@ -62,3 +62,9 @@ Rook-Ceph Setup DOne will activate the rest of its components tomorrow.
 Added ingress-nginx and cert manager will add Gitops Stack(ArgoCd/FluxCd) plus monitoring stack
 
 Another day confused with the next step. More things to be added here.
+
+Have added securecodebox and trivy
+
+want to add jenkins, sonarqube, nexus and monitoring stack.
+
+Then deploy a postgresql and mongodb clusters
