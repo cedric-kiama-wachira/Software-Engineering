@@ -61,4 +61,4 @@ Rook-Ceph Setup DOne will activate the rest of its components tomorrow.
 
 Added ingress-nginx and cert manager will add Gitops Stack(ArgoCd/FluxCd) plus monitoring stack
 
-Another day confused with the next step
+Another day confused with the next step. More things to be added here.
