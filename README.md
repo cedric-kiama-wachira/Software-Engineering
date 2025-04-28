@@ -67,4 +67,4 @@ Have added securecodebox and trivy
 
 want to add jenkins, sonarqube, nexus and monitoring stack.
 
-Then deploy a postgresql and mongodb clusters
+Then deploy a postgresql and mongodb clusters Ill start with postgresql first.
