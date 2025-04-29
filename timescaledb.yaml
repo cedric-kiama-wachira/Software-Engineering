@@ -1,0 +1,49 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: timescaledb
+  namespace: default
+spec:
+  instances: 3 # Primary + 2 replicas for HA
+  imageName:  ghcr.io/imusmanmalik/timescaledb-postgis:17.4 #TimescaleDB Community License
+  bootstrap:
+    initdb:
+      postInitTemplateSQL:
+        - CREATE EXTENSION timescaledb;
+        - CREATE EXTENSION postgis; # Optional, if needed
+        - CREATE EXTENSION postgis_topology;
+        - CREATE EXTENSION fuzzystrmatch;
+        - CREATE EXTENSION postgis_tiger_geocoder;
+  postgresql:
+    shared_preload_libraries:
+      - timescaledb
+  storage:
+    storageClass: rook-ceph-block # Use Rook-Ceph StorageClass
+    size: 20Gi
+  walStorage: # Separate storage for WAL to optimize performance
+    storageClass: rook-ceph-block
+    size: 10Gi
+  backup:
+    barmanObjectStore:
+      destinationPath: 'https://veryeasydev-k8s-timescaledb.hel1.your-objectstorage.com' # Use Ceph S3 or external S3
+      s3Credentials:
+        accessKeyId:
+          name: object-creds
+          key: ACCESS_KEY_ID
+        secretAccessKey:
+          name: object-creds
+          key: ACCESS_SECRET_KEY
+    retentionPolicy: "30d" # Keep backups for 30 days
+  monitoring:
+    enablePodMonitor: true # For Prometheus
+  affinity: # Spread replicas across nodes for resilience
+    topologyKey: kubernetes.io/hostname
+  resources: # Set resource limits for enterprise stability
+    requests:
+      memory: "2Gi"
+      cpu: "1"
+    limits:
+      memory: "4Gi"
+      cpu: "2"
+  superuserSecret: # Store superuser credentials securely
+    name: timescaledb-superuser
