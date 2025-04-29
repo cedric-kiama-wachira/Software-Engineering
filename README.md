@@ -49,6 +49,21 @@ This is the latest version of the curriculum for the following CNCF exams:
     Kubernetes and Cloud Native Security Associate (KCSA)
     OpenTelemetry Certified Associate (OTCA)
     Prometheus Certified Associate (PCA)
+    KCA: Kyverno Certified Associate
+    OpenSearch and OpenSearch Dashboards
+    Vendor-neutral, model-driven network management designed by users
+    https://openmetrics.io/
+    https://www.uber.com/en-AE/blog/migrating-ubers-compute-platform-to-kubernetes-a-technical-journey/
+    https://www.securecodebox.io/docs/getting-started/installation
+    https://www.keycloak.org/guides#high-availability
+    https://www.youtube.com/watch?v=YM41mLZQxzE&list=PLpNYlUeSK_rnanDUNr4KiTlkLTmtqK-sQ
+    https://www.youtube.com/watch?v=hINC-pmcnbg
+    https://learn.mongodb.com/catalog
+    https://www.timescale.com/developers
+    https://valkey.io/
+    https://milvus.io/docs/install_cluster-milvusoperator.md
+
+
 -------lB SAME REGION
 Getting the Network and Firewall plus DNS settings Correct
 Installed K8s - need to fix Ciliuim

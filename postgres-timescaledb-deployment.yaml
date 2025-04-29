@@ -1,0 +1,57 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: postgres-timescaledb-deployment-cluster  # Changed from filename to proper name
+  namespace: postgres-timescaledb-deployment
+spec:
+  instances: 3
+  #imageName: timescale/timescaledb-ha:pg17
+  imageName: timescale/timescaledb-postgis:ts2.11.1-pg14-postgis3 
+  bootstrap:
+    initdb:
+      database: timescale_db  # Match app user database
+      owner: timescale_user   # Match app user
+      postInitTemplateSQL:
+        - CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
+        - CREATE EXTENSION IF NOT EXISTS postgis;
+        - CREATE EXTENSION IF NOT EXISTS postgis_topology;
+        - CREATE EXTENSION IF NOT EXISTS fuzzystrmatch;
+        - CREATE EXTENSION IF NOT EXISTS postgis_tiger_geocoder;
+  postgresql:
+    shared_preload_libraries:
+      - timescaledb
+    parameters:
+      max_connections: "200"
+      shared_buffers: "512MB"
+      work_mem: "16MB"
+  storage:
+    storageClass: postgres-timescaledb-storageclass  # Verify exact name
+    size: 20Gi
+  walStorage:
+    storageClass: postgres-timescaledb-storageclass
+    size: 10Gi
+  backup:
+    barmanObjectStore:
+      destinationPath: 's3://timescale-backups'
+      endpointURL: 'https://veryeasydev-k8s-timescaledb.hel1.your-objectstorage.com'
+      s3Credentials:
+        accessKeyId:
+          name: s3-style-objects-creds  
+          key: ACCESS_KEY_ID
+        secretAccessKey:
+          name: s3-style-objects-creds  
+          key: ACCESS_SECRET_KEY
+    retentionPolicy: "30d"
+  monitoring:
+    enablePodMonitor: true
+  affinity:
+    topologyKey: kubernetes.io/hostname
+  resources:
+    requests:
+      memory: "2Gi"
+      cpu: "1"
+    limits:
+      memory: "4Gi"
+      cpu: "2"
+  superuserSecret:
+    name: timescaledb-superuser
