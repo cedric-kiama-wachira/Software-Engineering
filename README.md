@@ -64,6 +64,10 @@ This is the latest version of the curriculum for the following CNCF exams:
     https://milvus.io/docs/install_cluster-milvusoperator.md
 
 
+𝗗𝗲𝘃𝗢𝗽𝘀 𝗧𝘂𝘁𝗼𝗿𝗶𝗮𝗹𝘀: Visit www.devopscube.com for hands-on DevOps tutorials
+
+𝗙𝗿𝗲𝗲 𝗗𝗲𝘃𝗢𝗽𝘀 𝗖𝗼𝘂𝗿𝘀𝗲𝘀: Visit www.techiescamp.com for free Courses
+
 -------lB SAME REGION
 Getting the Network and Firewall plus DNS settings Correct
 Installed K8s - need to fix Ciliuim
