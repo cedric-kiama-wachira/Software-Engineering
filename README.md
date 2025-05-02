@@ -91,3 +91,5 @@ Then deploy a postgresql and mongodb clusters Ill start with postgresql first.
 Today is about ensuring rook-ceph and postgresql-timescaledb are fixed, up and running.
 
 TodaY I Will work on implementing TimescaleDB using Patroni as an operator since cloudnativePG has issues.
+
+adding more packages and improving the custom docker build
