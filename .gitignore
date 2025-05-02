@@ -9,3 +9,4 @@ mtr-report-Mail-Very-Easy-dev.txt
 *.pem
 *.yaml
 old-timeseries-things
+customdocker/
