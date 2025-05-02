@@ -93,3 +93,7 @@ Today is about ensuring rook-ceph and postgresql-timescaledb are fixed, up and r
 TodaY I Will work on implementing TimescaleDB using Patroni as an operator since cloudnativePG has issues.
 
 adding more packages and improving the custom docker build
+
+custom docker build is coming well, I want to add its timescaledb-toolchain and it depend on pgrx built using rust
+I also need to install https://pgbackrest.org/user-guide.html  for backup and recovery and also any extensions for sharding
+
