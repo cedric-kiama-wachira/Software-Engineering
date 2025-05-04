@@ -97,3 +97,4 @@ adding more packages and improving the custom docker build
 custom docker build is coming well, I want to add its timescaledb-toolchain and it depend on pgrx built using rust
 I also need to install https://pgbackrest.org/user-guide.html  for backup and recovery and also any extensions for sharding
 
+I think rust and golang go hand in hand.
