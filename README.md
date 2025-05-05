@@ -101,4 +101,4 @@ I think rust and golang go hand in hand. https://apt.llvm.org/
 
 Timescaledb foundation custom image is all done.
 
-Now I want to move to pgbackrest.
+Now I want to move to pgbackrest. DOne and the custom docker Image is aware of pgbackuprest.
