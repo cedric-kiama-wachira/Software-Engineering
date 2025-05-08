@@ -1,11 +1,12 @@
+cat <<EOF | kubectl apply -f -
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: rook-ceph-block
+  name: postgresql-block
 provisioner: rook-ceph.rbd.csi.ceph.com
 parameters:
   clusterID: rook-ceph
-  pool: replicapool
+  pool: postgresql-pool
   imageFormat: "2"
   imageFeatures: layering
   csi.storage.k8s.io/provisioner-secret-name: rook-csi-rbd-provisioner
@@ -17,3 +18,4 @@ parameters:
 reclaimPolicy: Delete
 allowVolumeExpansion: true
 volumeBindingMode: Immediate
+EOF

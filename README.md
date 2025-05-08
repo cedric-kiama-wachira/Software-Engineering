@@ -106,3 +106,7 @@ Now I want to move to pgbackrest. DOne and the custom docker Image is aware of p
 Custom Image file is to large, I need to shrink it so that I can publish to my docker hub
 
 docker login works Improved the image and published to my repo.
+
+Let us now setup an external cephAdm Cluster.
+
+

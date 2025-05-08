@@ -1,0 +1,50 @@
+kubectl logs -n postgresql postgresql-0 -c postgresql --previous
+Ensuring proper configuration...
+Running timescaledb-tune for optimal performance...
+Using postgresql.conf at this path:
+/etc/postgresql/17/main/postgresql.conf
+
+shared_preload_libraries = 'timescaledb'		# (change requires restart)
+shared_buffers = 3903MB
+effective_cache_size = 11710MB
+maintenance_work_mem = 1951MB
+work_mem = 4996kB
+timescaledb.max_background_workers = 16
+max_worker_processes = 27
+max_parallel_workers_per_gather = 4
+max_parallel_workers = 8
+wal_buffers = 16MB
+min_wal_size = 512MB
+default_statistics_target = 100
+random_page_cost = 1.1
+Writing backup to:
+/tmp/timescaledb_tune.backup202505071331
+
+Recommendations based on 15.25 GB of available memory and 8 CPUs for PostgreSQL 17
+checkpoint_completion_target = 0.9
+max_locks_per_transaction = 256
+autovacuum_max_workers = 10
+autovacuum_naptime = 10
+default_toast_compression = lz4
+jit = off
+effective_io_concurrency = 256
+timescaledb.last_tuned = '2025-05-07T13:31:55Z'
+timescaledb.last_tuned_version = '0.18.0'
+Saving changes to: /etc/postgresql/17/main/postgresql.conf
+Starting PostgreSQL as postgres user...
+2025-05-07 13:31:55.696 GMT [1] LOG:  skipping missing configuration file "/var/lib/postgresql/17/main/postgresql.auto.conf"
+2025-05-07 13:31:55.696 UTC [1] FATAL:  data directory "/var/lib/postgresql/17/main" has wrong ownership
+2025-05-07 13:31:55.696 UTC [1] HINT:  The server must be started by the user that owns the data directory.
+
+
+Now we have the exact error! The PostgreSQL container is failing to start with:
+
+FATAL: data directory "/var/lib/postgresql/17/main" has wrong ownership
+HINT: The server must be started by the user that owns the data directory.
+
+This is an ownership issue. Despite the init-permissions container running chown -R 999:999, there still seems to be a mismatch. This can happen when the PostgreSQL image expects different user IDs or when the volume mounting doesn't preserve the right permissions.
+Let's fix this by modifying our StatefulSet:
+
+First, let's add a more robust init container that ensures the permissions are correctly set:
+
+
