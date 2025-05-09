@@ -10,3 +10,13 @@ mtr-report-Mail-Very-Easy-dev.txt
 *.yaml
 old-timeseries-things
 customdocker/
+kubernetes-infra
+kubernetes-deployment-TheHardWay
+external-cephadm-cluster
+kubernetes-deployments
+OLD-cONTROL-PLANE-fILES
+cephdashboard.pem
+veryeasy.dev.pem
+fullchain.pem
+privkey.pem
+README.md

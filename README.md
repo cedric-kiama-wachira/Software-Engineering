@@ -109,4 +109,6 @@ docker login works Improved the image and published to my repo.
 
 Let us now setup an external cephAdm Cluster.
 
+I will rebuild the cluster a fresh.
+
 
