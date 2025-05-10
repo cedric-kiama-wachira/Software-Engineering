@@ -111,4 +111,4 @@ Let us now setup an external cephAdm Cluster.
 
 I will rebuild the cluster a fresh.
 
-
+rook-ceph external storage is done.
