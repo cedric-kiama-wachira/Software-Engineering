@@ -112,3 +112,6 @@ Let us now setup an external cephAdm Cluster.
 I will rebuild the cluster a fresh.
 
 rook-ceph external storage is done.
+
+Time to review averything done and also ensure that the custom docker image is safe for use.
+
