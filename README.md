@@ -115,3 +115,4 @@ rook-ceph external storage is done.
 
 Time to review averything done and also ensure that the custom docker image is safe for use.
 
+Taking a break today, eating and sleeping to recharge for tomorrow. 
