@@ -118,3 +118,5 @@ Time to review averything done and also ensure that the custom docker image is s
 Taking a break today, eating and sleeping to recharge for tomorrow. 
 
 Fixing Custom Image to pass the Scout Health Check on Docker Hub.
+
+Made some changes to my home page.
