@@ -124,3 +124,5 @@ Made some changes to my home page.
 Fixed Scout Health on Docker Hub and got an A. I think this is indeed very good progress
 
 Go Development is onGoing. 
+
+More on Go Development.
