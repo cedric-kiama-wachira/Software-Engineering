@@ -130,3 +130,5 @@ More on Go Development.
 APIs and Data Structures in Golang(go)
 
 Created a simple banner CLI program and had a deep dive into the magic of runes, Unicode, and UTF-8 encoding in Go!
+
+Polishing up on this before I move to the next one on APIs and HTTP in Golang
