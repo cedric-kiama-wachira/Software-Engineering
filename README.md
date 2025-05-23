@@ -134,3 +134,5 @@ Created a simple banner CLI program and had a deep dive into the magic of runes,
 Polishing up on this before I move to the next one on APIs and HTTP in Golang
 
 Perfected the banner and still a lot of work to do on my banner code. Now I want to fetch data from publicly accessible REST api
+
+Reading the Kubernetes document preparation for the kubestronaut exam starts now. May 23 2025 at 7:40 AM
