@@ -1,0 +1,28 @@
+ssh -o IdentitiesOnly=yes -i /home/infrastructure-and-security/.ssh/id_SE_ed25519 root@65.109.175.38
+
+ClubName: Real Madrid CF
+FoundedYear: 1902
+StadiumName: Santiago Bernabéu
+StadiumCapacity: 81,044
+StadiumLocation: Madrid, Spain (40.4531° N, 3.6884° W)
+ConstructionYear: 1947
+Renovations: 2001-2006, 2019-2023
+CurrentPresident: Florentino Pérez (since 2009)
+CurrentHeadCoach: Carlo Ancelotti
+Assistants: Davide Ancelotti
+Squad: [Vinícius Jr. (Forward, #7), Jude Bellingham (Midfielder, #5), ...]
+League: La Liga
+SeasonRecord: 2024-2025 (W: 8, L: 1, D: 2, Pts: 26)
+Rivalries: Barcelona, Atlético Madrid
+ChampionsLeagueTitles: 14
+LaLigaTitles: 35
+DomesticCups: 20 (Copa del Rey)
+GoalsScored: 45
+GoalsConceded: 12
+NetWorth: 5.1B USD
+Revenue: 900M USD
+KitColors: White (home), Purple (away)
+Nickname: Los Blancos
+Website: https://www.realmadrid.com
+Twitter: @realmadrid
+

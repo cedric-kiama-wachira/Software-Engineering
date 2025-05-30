@@ -1,0 +1,7 @@
+package main
+
+import "fmt"
+
+func main(){
+	fmt.Println("Introducing Interfaces for my project")
+}

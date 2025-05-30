@@ -1,0 +1,35 @@
+Job Description:
+
+Company
+
+We are Rakuten Luxembourg – part of the international Rakuten Group! You probably know Rakuten as Japan’s biggest e-Commerce company or creator and operator of the first OpenRAN mobile network.
+
+Rakuten Luxembourg is a young technology company with a lot of internal expertise around financial services with a focus on card payments. Our technology office is located in the beautiful city of Munich. We are building core platforms for financial applications and are working closely together with Rakuten Europe Bank to create and operate their main banking-as-a-service platform for the bank’s business customers. Rakuten Europe Bank is a fully licensed bank in Luxembourg and Rakuten’s central financial hub in Europe.
+
+Project
+
+Our platform is responsible for handling financial transactions in real time and managing everything around it. For that security and reliability are two of the most important aspects! It is therefore not surprising that we have chosen Rust as the only language for the core components, Postgres for reliable data management on our database clusters and trust in AWS for reliable hosting of our everything-as-code infrastructure.
+
+All our infrastructure runs on Linux, the local machines on MacOS. For that we can rely on the support of a strong, international group.
+
+Role
+
+And now it is time to grow our technology and operations teams to scale development and the business in general. For that we are looking for highly motivated Rust engineers that want to join our Munich team. Experience with and excitement for Rust is mandatory and you should be well versed on the command line. Clean and well-documented code is not an annoyance to you, but a valuable investment in the future. You must be a great team player and always work on improving the team as a whole!
+
+Due to our environment, you must enjoy going the extra step to always improve the security and reliability of our platform. Being paranoid is a good trait for sensitive systems like ours. Open and proactive communication, even when not in the office, and a healthy error culture are mandatory.
+
+Qualifications
+
+    A master’s degree or diploma in computer science or a similar experience.
+    You are well versed in Rust and have seen tokio and sqlx.
+    Linux is not just your NAS’ OS.
+    You have worked on 24/7 backends before and understand CAS and ABA.
+    You have proven a strong focus on reliability and security in previous projects.
+    Having worked in a regulated environment is beneficial.
+    Having worked in the financial industry is a huge plus.
+    Having worked in card issuing is a cheat code.
+    You are no solo fighter and enjoy communicating and being part of a diverse team.
+    Good English is mandatory, German highly appreciated.
+
+Languages:
+English (Overall - 3 - Advanced), German (Overall - 3 - Advanced)

@@ -1,0 +1,18 @@
+kubectl exec -it postgresql-0 -n postgresql -c postgresql -- bash
+
+# Connect to PostgreSQL
+psql -U postgres
+
+# Within psql, try creating the extension:
+CREATE EXTENSION timescaledb;
+
+# Check if it worked
+SELECT default_version, installed_version FROM pg_available_extensions WHERE name = 'timescaledb';
+
+# Let's also check other extensions
+CREATE EXTENSION pgvector;
+CREATE EXTENSION pgpcre; 
+CREATE EXTENSION postgis;
+
+# Verify the installed extensions
+\dx

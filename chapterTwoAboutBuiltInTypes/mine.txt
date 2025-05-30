@@ -1,0 +1,315 @@
+Now that we understand how to store data in our computer memory, we need to look at how to enhance and manipulate it. This introduces us to Types. I’ll refer to data types as ‘types’ from here on. According to the Go Spec, there are four general categories of types, each with distinct types:
+
+1. Built-In Types.
+2. Composite Types (struct, array, slice, map, chan, interface, func).
+3. Custom Types.
+4. Pointer Types.
+5. We need now to enhance our program further by showing our functional, technical capabilities.
+   We will add more data point about my life. Why we need to achive the following
+   5.1 We understand and can use all Built-in types the basic way.
+   5.2 We can refactor the code to adopt, adopt all composite types.
+   5.3 Then further refactor the code to adopt custom types.
+   5.4 The final version will be code that is fully Idiomatic.
+
+What are built-in types? and Why are they required?
+
+These are the foundational types in the Go Spec, used globally or locally in code blocks. They fall into four categories:
+
+1. Number Types with 14 distinct types.
+2. String Type with 1 distinct type.
+3. Boolean Type with 1 distinct type.
+4. Special Types with 2 distinct types.
+
+They’re always available, no installation needed, and must be used. They are used to build very basic applications in the real world.
+
+What are composite (struct, array, slice, map, chan, interface, func) types? and Why are they required?
+
+If we want to start building complex applications, then composite types are the starting point.To add them in our code block. We use the built-in and other types as a starting point.
+You will quickly recognize them often since at the start of the block of code, the type word is used to define them, and we shall see how to do that.
+
+1. The struct type is a collection of fields, each has a name and type bundled together.
+2. An Array type is a fixed-size sequence of elements all of the same type.
+3. A slice type is an alternative to Array Type especially if you opt to use a sequence of elements of the same type that can shrink or grow.
+4. A map type is a key value pair collection where keys map to values.
+5. Chan type is a conduit for sending and receiving values in goroutine(will be discussed later).
+6. Interface type is a method signature that a type must implement; it's abstract and defining behavior.
+7. Func type is used to represent a function signature; the parameters and return values.
+
+They are not mandatory, however our program will be very flat in a real world scenario with limited capabilities. Still the program will be fragile and code base generic.
+
+What are custom types? Why are they required?
+
+Custom type improves our program's even further by enhancing what has developed using Built-in and composite types. At this point we are giving the program more life.
+They are also not mandatory but with them you are assured that: the programs base code will be clear as it's now using meaningful names, types safety and you can catch errors early, your types become active players, it brings code structure, shows consistency and hides abstraction in the code. They are defined the same way as composite types. 
+
+What are pointer types and Why are they required?
+
+They are used as signposts for other types in our block of code. Meaning that they are used to give the computer's memory address of where the data is stored. If you are working on big data projects, you want the data journey to be faster. Pointers are lightweight, fast and efficient for this type of scenario. You can use them to modify data directly instead of having copies of it. They can have nil values unlike Built-in types like int. They give you fine grained control. Other distinct types like structs rely on pointers to connect to other nodes. They are not mandatory.
+
+
+Data Points for the first version of our program:
+
+package main
+
+import "fmt"
+
+const fullnames string = "Cedric K. Wachira"       // Full name
+var birthyear int = 1982                           // Year of birth
+var age int = 2025 - 1982                          // Age in 2025 (43)
+var totalFriends int = 150                         // Total friends
+var dailyCoffees int8 = 2                          // Daily coffee cups
+var stepsPerDay int16 = 8000                       // Daily steps
+var totalBooksRead int32 = 250                     // Books read lifetime
+var lifetimeSeconds int64 = 1356048000             // Seconds lived by 2025
+var daysSinceLastVacation uint = 180               // Days since last trip
+var favoriteHour uint8 = 7                         // Favorite hour (7 AM)
+var yearlyExpenses uint16 = 45000                  // Yearly expenses ($)
+var stepsLifetime uint32 = 103660000               // Lifetime steps
+var starsVisible uint64 = 3000                     // Stars visible at night
+var height float32 = 1.75                          // Height in meters
+var weight float64 = 82.563                        // Weight in kg
+var favoriteComplex complex64 = 3 + 4i             // Favorite complex number
+var lifeVector complex128 = 43.5 + 1982.0i         // Life as a complex number
+var isMorningPerson bool = true                    // Morning person?
+var favoriteQuote string = "Code is life"          // Favorite quote
+var initial byte = 'C'                             // First initial
+var favoriteEmoji rune = '🚀'                      // Favorite emoji
+
+func main(){
+
+fmt.Println(birthyear)
+fmt.Println(favoriteEmoji)
+
+}
+
+
+Lets do the first Refactor for our program:
+
+
+package main
+
+import "fmt"
+
+const fullnames string = "Cedric K. Wachira"       // Full name
+var(birthyear int = 1982                           // Year of birth
+age int = 2025 - 1982                          // Age in 2025 (43)
+totalFriends int = 150                         // Total friends
+dailyCoffees int8 = 2                          // Daily coffee cups
+stepsPerDay int16 = 8000                       // Daily steps
+totalBooksRead int32 = 250                     // Books read lifetime
+lifetimeSeconds int64 = 1356048000             // Seconds lived by 2025
+daysSinceLastVacation uint = 180               // Days since last trip
+favoriteHour uint8 = 7                         // Favorite hour (7 AM)
+yearlyExpenses uint16 = 45000                  // Yearly expenses ($)
+stepsLifetime uint32 = 103660000               // Lifetime steps
+starsVisible uint64 = 3000                     // Stars visible at night
+height float32 = 1.75                          // Height in meters
+weight float64 = 82.563                        // Weight in kg
+favoriteComplex complex64 = 3 + 4i             // Favorite complex number
+lifeVector complex128 = 43.5 + 1982.0i         // Life as a complex number
+isMorningPerson bool = true                    // Morning person?
+favoriteQuote string = "Code is life"          // Favorite quote
+initial byte = 'C'                             // First initial
+favoriteEmoji rune = '🚀')                      // Favorite emoji
+
+func main(){
+
+fmt.Println(birthyear)
+fmt.Println(favoriteEmoji)
+
+}
+
+Let do the second refactor for our program.
+
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+const (
+	fullName       string  = "Cedric K. Wachira" // Full name
+	favoriteQuote  string  = "Code is life"      // Favorite quote
+	favoriteHour   uint8   = 7                   // Favorite hour (7 AM)
+	initial        byte    = 'C'                 // First initial
+	favoriteEmoji  rune    = '🚀'                 // Favorite emoji
+)
+
+var (
+	birthYear         int     = 1982                          // Year of birth
+	age              int     = time.Now().Year() - birthYear // Dynamic age calculation
+	totalFriends      int     = 150                           // Total friends
+	dailyCoffees      uint8   = 2                             // Daily coffee cups
+	stepsPerDay       uint16  = 8000                          // Daily steps
+	totalBooksRead    uint32  = 250                           // Books read lifetime
+	lifetimeSeconds   int64   = int64(time.Since(time.Date(birthYear, 1, 1, 0, 0, 0, 0, time.UTC)).Seconds()) // Calculated seconds lived
+	daysSinceLastTrip uint16  = 180                           // Days since last trip
+	yearlyExpenses    uint32  = 45000                         // Yearly expenses ($)
+	stepsLifetime     uint64  = 103660000                     // Lifetime steps
+	starsVisible      uint64  = 3000                          // Stars visible at night
+	height            float64 = 1.75                          // Height in meters (use float64 for better precision)
+	weight            float64 = 82.563                        // Weight in kg
+	favoriteComplex   complex128 = 3 + 4i                    // Favorite complex number
+	lifeVector        complex128 = complex(float64(age), float64(birthYear)) // Life as a complex number
+	isMorningPerson   bool    = true                         // Morning person?
+)
+
+func main() {
+	fmt.Println("Full Name:", fullName)
+	fmt.Println("Age:", age)
+	fmt.Println("Birth Year:", birthYear)
+	fmt.Println("Total Friends:", totalFriends)
+	fmt.Println("Daily Coffees:", dailyCoffees)
+	fmt.Println("Steps Per Day:", stepsPerDay)
+	fmt.Println("Total Books Read:", totalBooksRead)
+	fmt.Println("Lifetime Seconds:", lifetimeSeconds)
+	fmt.Println("Days Since Last Trip:", daysSinceLastTrip)
+	fmt.Println("Yearly Expenses:", yearlyExpenses)
+	fmt.Println("Steps Lifetime:", stepsLifetime)
+	fmt.Println("Stars Visible at Night:", starsVisible)
+	fmt.Println("Height (m):", height)
+	fmt.Println("Weight (kg):", weight)
+	fmt.Println("Favorite Complex Number:", favoriteComplex)
+	fmt.Println("Life Vector:", lifeVector)
+	fmt.Println("Is Morning Person?:", isMorningPerson)
+	fmt.Println("Favorite Quote:", favoriteQuote)
+	fmt.Println("Initial:", string(initial))
+	fmt.Println("Favorite Emoji:", string(favoriteEmoji))
+}
+
+Third refactoring exercise
+
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+const (
+	fullName       string  = "Cedric K. Wachira" // Full name
+	favoriteQuote  string  = "Code is life"      // Favorite quote
+	favoriteHour   uint8   = 7                   // Favorite hour (7 AM)
+	initial        byte    = 'C'                 // First initial
+	favoriteEmoji  rune    = '🚀'                 // Favorite emoji
+)
+
+var (
+	birthYear         int     = 1982                          // Year of birth
+	age              int     = time.Now().Year() - birthYear // Dynamic age calculation
+	totalFriends      int     = 150                           // Total friends
+	dailyCoffees      uint8   = 2                             // Daily coffee cups
+	stepsPerDay       uint16  = 8000                          // Daily steps
+	totalBooksRead    uint32  = 250                           // Books read lifetime
+	lifetimeSeconds   int64   = int64(time.Since(time.Date(birthYear, 1, 1, 0, 0, 0, 0, time.UTC)).Seconds()) // Calculated seconds lived
+	daysSinceLastTrip uint16  = 180                           // Days since last trip
+	yearlyExpenses    uint32  = 45000                         // Yearly expenses ($)
+	stepsLifetime     uint64  = 103660000                     // Lifetime steps
+	starsVisible      uint64  = 3000                          // Stars visible at night
+	height            float64 = 1.75                          // Height in meters (use float64 for better precision)
+	weight            float64 = 82.563                        // Weight in kg
+	favoriteComplex   complex128 = 3 + 4i                    // Favorite complex number
+	lifeVector        complex128 = complex(float64(age), float64(birthYear)) // Life as a complex number
+	isMorningPerson   bool    = true                         // Morning person?
+
+	memoryAddress     uintptr = uintptr(unsafe.Pointer(&age)) // Memory address of age
+	lastError         error   = nil                           // Last encountered error
+)
+
+func main() {
+	fmt.Println("Full Name:", fullName)
+	fmt.Println("Age:", age)
+	fmt.Println("Birth Year:", birthYear)
+	fmt.Println("Total Friends:", totalFriends)
+	fmt.Println("Daily Coffees:", dailyCoffees)
+	fmt.Println("Steps Per Day:", stepsPerDay)
+	fmt.Println("Total Books Read:", totalBooksRead)
+	fmt.Println("Lifetime Seconds:", lifetimeSeconds)
+	fmt.Println("Days Since Last Trip:", daysSinceLastTrip)
+	fmt.Println("Yearly Expenses:", yearlyExpenses)
+	fmt.Println("Steps Lifetime:", stepsLifetime)
+	fmt.Println("Stars Visible at Night:", starsVisible)
+	fmt.Println("Height (m):", height)
+	fmt.Println("Weight (kg):", weight)
+	fmt.Println("Favorite Complex Number:", favoriteComplex)
+	fmt.Println("Life Vector:", lifeVector)
+	fmt.Println("Is Morning Person?:", isMorningPerson)
+	fmt.Println("Favorite Quote:", favoriteQuote)
+	fmt.Println("Initial:", string(initial))
+	fmt.Println("Favorite Emoji:", string(favoriteEmoji))
+	fmt.Println("Memory Address of Age:", memoryAddress)
+	fmt.Println("Last Error:", lastError)
+}
+
+Our First Error
+go run main.go 
+# command-line-arguments
+./main.go:34:38: undefined: unsafe
+
+
+The error was because I didn't import the unsafe package
+
+fixed it
+
+import (
+	"fmt"
+	"time"
+	"unsafe"
+)
+
+const (
+	fullName       string  = "Cedric K. Wachira" // Full name
+	favoriteQuote  string  = "Code is life"      // Favorite quote
+	favoriteHour   uint8   = 7                   // Favorite hour (7 AM)
+	initial        byte    = 'C'                 // First initial
+	favoriteEmoji  rune    = '🚀'                 // Favorite emoji
+)
+
+var (
+	birthYear         int     = 1982                          // Year of birth
+	age              int     = time.Now().Year() - birthYear // Dynamic age calculation
+	totalFriends      int     = 150                           // Total friends
+	dailyCoffees      uint8   = 2                             // Daily coffee cups
+	stepsPerDay       uint16  = 8000                          // Daily steps
+	totalBooksRead    uint32  = 250                           // Books read lifetime
+	lifetimeSeconds   int64   = int64(time.Since(time.Date(birthYear, 1, 1, 0, 0, 0, 0, time.UTC)).Seconds()) // Calculated seconds lived
+	daysSinceLastTrip uint16  = 180                           // Days since last trip
+	yearlyExpenses    uint32  = 45000                         // Yearly expenses ($)
+	stepsLifetime     uint64  = 103660000                     // Lifetime steps
+	starsVisible      uint64  = 3000                          // Stars visible at night
+	height            float64 = 1.75                          // Height in meters (use float64 for better precision)
+	weight            float64 = 82.563                        // Weight in kg
+	favoriteComplex   complex128 = 3 + 4i                    // Favorite complex number
+	lifeVector        complex128 = complex(float64(age), float64(birthYear)) // Life as a complex number
+	isMorningPerson   bool    = true                         // Morning person?
+
+	memoryAddress     uintptr = uintptr(unsafe.Pointer(&age)) // Memory address of age
+	lastError         error   = nil                           // Last encountered error
+)
+
+func main() {
+	fmt.Println("Full Name:", fullName)
+	fmt.Println("Age:", age)
+	fmt.Println("Birth Year:", birthYear)
+	fmt.Println("Total Friends:", totalFriends)
+	fmt.Println("Daily Coffees:", dailyCoffees)
+	fmt.Println("Steps Per Day:", stepsPerDay)
+	fmt.Println("Total Books Read:", totalBooksRead)
+	fmt.Println("Lifetime Seconds:", lifetimeSeconds)
+	fmt.Println("Days Since Last Trip:", daysSinceLastTrip)
+	fmt.Println("Yearly Expenses:", yearlyExpenses)
+	fmt.Println("Steps Lifetime:", stepsLifetime)
+	fmt.Println("Stars Visible at Night:", starsVisible)
+	fmt.Println("Height (m):", height)
+	fmt.Println("Weight (kg):", weight)
+	fmt.Println("Favorite Complex Number:", favoriteComplex)
+	fmt.Println("Life Vector:", lifeVector)
+	fmt.Println("Is Morning Person?:", isMorningPerson)
+	fmt.Println("Favorite Quote:", favoriteQuote)
+	fmt.Println("Initial:", string(initial))
+	fmt.Println("Favorite Emoji:", string(favoriteEmoji))
+	fmt.Println("Memory Address of Age:", memoryAddress)
+	fmt.Println("Last Error:", lastError)
+}
+

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: s3-style-objects-creds
+  namespace: postgres-timescaledb-deployment  # Correct namespace
+type: Opaque
+stringData:
+  ACCESS_KEY_ID: B6ODA73M8VJBVRNVTBRO
+  ACCESS_SECRET_KEY: GdfRBnOoSfNMAtAVwVHUyikXwDvK0VZ4Pohra0ht

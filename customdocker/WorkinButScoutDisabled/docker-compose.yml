@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  postgres:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: pg17-4-timescaledb:2.19.3-slim
+    container_name: postgres-timescaledb
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/17/main
+      - pgbackrest_conf:/etc/pgbackrest
+      - pgbackrest_data:/var/lib/pgbackrest
+      - pgbackrest_logs:/var/log/pgbackrest
+
+volumes:
+  pg_data:
+  pgbackrest_conf:
+  pgbackrest_data:
+  pgbackrest_logs:

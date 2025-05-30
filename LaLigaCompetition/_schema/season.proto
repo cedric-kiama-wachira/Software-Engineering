@@ -1,0 +1,15 @@
+message Season {
+  required string id = 1 [(pattern) = "^\d{4}-\d{4}$"];
+}
+
+enum CompetitionType{
+  LEAGUE = 0;
+  CUP = 1;
+  INTERNATIONAL = 2;
+}
+
+message Match{
+  required string home = 1;
+  required string away = 2;
+  optional google.protobuf.Timestamp date = 3; 
+}

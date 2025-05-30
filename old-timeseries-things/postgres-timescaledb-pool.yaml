@@ -1,0 +1,15 @@
+apiVersion: ceph.rook.io/v1
+kind: CephBlockPool
+metadata:
+  name: postgres-timescaledb-pool
+  namespace: rook-ceph
+spec:
+  failureDomain: host
+  replicated:
+    size: 3
+    requireSafeReplicaSize: true
+  # Remove explicit pg_num/pgp_num for automatic calculation
+  # Or use calculated values:
+  parameters:
+    pg_num: "64"
+    pgp_num: "64"

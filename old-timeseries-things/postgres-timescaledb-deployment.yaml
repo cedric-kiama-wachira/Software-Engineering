@@ -1,0 +1,66 @@
+apiVersion: "acid.zalan.do/v1"
+kind: postgresql
+metadata:
+  name: postgres-timescaledb-deployment-cluster
+  namespace: postgres-timescaledb-deployment
+spec:
+  teamId: "timescale"
+  volume:
+    size: 20Gi
+    storageClass: postgres-timescaledb-storageclass
+  walVolume:  # Separate top-level field
+    size: 10Gi
+    storageClass: postgres-timescaledb-storageclass
+  numberOfInstances: 3
+  users:
+    timescale_user:
+    - superuser
+    - createdb
+  databases:
+    timescale_db: timescale_user
+  preparedDatabases:
+    timescale_db:
+      extensions:
+        timescaledb: public
+        postgis: public
+        postgis_topology: public
+        fuzzystrmatch: public
+        postgis_tiger_geocoder: public
+  postgresql:
+    version: "17"
+    parameters:  # Correct field name for PG config
+      shared_preload_libraries: "timescaledb"
+      max_connections: "200"
+      shared_buffers: "512MB"
+      work_mem: "16MB"
+  enablePodAntiAffinity: true  # Correct field name
+  dockerImage: "registry.opensource.zalan.do/acid/spilo-17:3.0-p1"  # Base Spilo image
+  spiloFSGroup: 103  # Required for Spilo-based images
+  env:
+  - name: WALG_S3_PREFIX
+    value: "s3://timescale-backups"
+  - name: AWS_ENDPOINT
+    value: "https://veryeasydev-k8s-timescaledb.hel1.your-objectstorage.com"
+  - name: AWS_REGION
+    value: "hel1"
+  - name: AWS_ACCESS_KEY_ID
+    valueFrom:
+      secretKeyRef:
+        name: s3-style-objects-creds
+        key: ACCESS_KEY_ID
+  - name: AWS_SECRET_ACCESS_KEY
+    valueFrom:
+      secretKeyRef:
+        name: s3-style-objects-creds
+        key: ACCESS_SECRET_KEY
+  - name: WALG_S3_SSE
+    value: "AES256"
+#  - name: WALG_DISABLE_S3_SSE: "false"
+  resources:
+    requests:
+      memory: "2Gi"
+      cpu: "1"
+    limits:
+      memory: "4Gi"
+      cpu: "2"
+  enableLogicalBackup: false

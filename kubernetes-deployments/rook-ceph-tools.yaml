@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rook-ceph-tools
+  namespace: rook-ceph
+  labels:
+    app: rook-ceph-tools
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rook-ceph-tools
+  template:
+    metadata:
+      labels:
+        app: rook-ceph-tools
+    spec:
+      containers:
+      - name: rook-ceph-tools
+        image: rook/ceph:1.17.1
+        command: ["/tini"]
+        args: ["-g", "--", "/usr/local/bin/toolbox.sh"]
+        env:
+          - name: ROOK_CEPH_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: rook-ceph-mon
+                key: ceph-username
+          - name: ROOK_CEPH_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: rook-ceph-mon
+                key: ceph-secret
+        volumeMounts:
+          - name: rook-config
+            mountPath: /etc/rook
+          - name: mon-endpoint-volume
+            mountPath: /etc/ceph  # Changed to a unique path
+      volumes:
+        - name: rook-config
+          emptyDir: {}
+        - name: mon-endpoint-volume
+          configMap:
+            name: rook-ceph-mon-endpoints
+            items:
+            - key: data
+              path: mon-endpoints  # Now writes to /etc/ceph/mon-endpoints
+      tolerations:
+        - key: "node.kubernetes.io/unreachable"
+          operator: "Exists"
+          effect: "NoExecute"
+          tolerationSeconds: 5

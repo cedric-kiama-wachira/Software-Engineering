@@ -1,0 +1,20 @@
+kubectl apply -f - <<EOF
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgresql
+  namespace: postgresql
+  labels:
+    app: postgresql
+spec:
+  type: ClusterIP
+  ports:
+  - port: 5432
+    targetPort: postgresql
+    name: postgresql
+  - port: 9187
+    targetPort: metrics
+    name: metrics
+  selector:
+    app: postgresql
+EOF

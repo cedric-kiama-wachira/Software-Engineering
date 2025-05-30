@@ -1,0 +1,165 @@
+config:
+  kubeProxyReplacement: disabled
+  kubeProxyReplacementStrictArp: false
+  enableIPv4Masquerade: false
+  enableIPv6Masquerade: false
+  tunnel: geneve
+  tunnelProtocol: geneve
+  routingMode: tunnel
+  k8s-service-host: "10.96.0.2"
+  k8s-service-port: "443"
+  autoDirectNodeRoutes: false
+  bpf:
+    hostLegacyRouting: false
+    masquerade: false
+  mountEtcDirectory: false
+
+ipam:
+  mode: kubernetes
+  operator:
+    clusterPoolIPv4PodCIDR: 10.244.0.0/16
+
+ipv4:
+  enabled: true
+ipv6:
+  enabled: false
+
+k8s:
+  requireIPv4PodCIDR: true
+  requireIPv6PodCIDR: false
+  serviceHost: "10.96.0.2"
+  servicePort: 443
+
+securityContext:
+  privileged: true
+  capabilities:
+    add:
+      - NET_ADMIN
+      - SYS_MODULE
+      - SYS_ADMIN
+      - BPF
+      - SYS_RESOURCE
+  procMount: Unmasked
+
+hubble:
+  enabled: true
+  relay:
+    enabled: true
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: "500m"
+        memory: "256Mi"
+  ui:
+    enabled: true
+    ingress:
+      enabled: false
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: "500m"
+        memory: "256Mi"
+
+agent:
+  enabled: true
+  env:
+    - name: KUBERNETES_SERVICE_HOST
+      value: "10.96.0.2"
+    - name: KUBERNETES_SERVICE_PORT
+      value: "443"
+
+operator:
+  replicas: 3
+  rollingUpdate:
+    maxUnavailable: 1
+  resources:
+    requests:
+      cpu: 200m
+      memory: 256Mi
+    limits:
+      cpu: 1000m
+      memory: 512Mi
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+              - key: io.cilium/app
+                operator: In
+                values:
+                  - operator
+          topologyKey: kubernetes.io/hostname
+  securityContext:
+    privileged: true
+    capabilities:
+      add:
+        - SYS_ADMIN
+    procMount: Default
+  image:
+    repository: quay.io/cilium/operator
+    tag: v1.17.3
+    pullPolicy: IfNotPresent
+
+bandwidthManager:
+  enabled: false
+
+bpf:
+  masquerade: false
+
+loadBalancer:
+  mode: hybrid
+  algorithm: maglev
+  acceleration: native
+
+hostServices:
+  enabled: true
+  protocols:
+    - tcp
+    - udp
+
+externalIPs:
+  enabled: true
+
+nodePort:
+  enabled: true
+  bindProtection: true
+
+affinity:
+  podAntiAffinity:
+    preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 100
+        podAffinityTerm:
+          labelSelector:
+            matchExpressions:
+              - key: k8s-app
+                operator: In
+                values:
+                  - cilium
+          topologyKey: kubernetes.io/hostname
+
+resources:
+  limits:
+    cpu: "4"
+    memory: 4Gi
+  requests:
+    cpu: 500m
+    memory: 2Gi
+
+livenessProbe:
+  enabled: true
+  port: 9876
+
+prometheus:
+  enabled: true
+  port: 9090
+  serviceMonitor:
+    enabled: false
+
+image:
+  repository: quay.io/cilium/cilium
+  tag: v1.17.3
+  pullPolicy: IfNotPresent

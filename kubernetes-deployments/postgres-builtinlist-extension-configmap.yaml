@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-built-in-list-extensions
+data:
+  extensions.list: |
+    hstore
+    pg_stat_statements
+    pg_partman
+    timescaledb
+    pgcrypto
+    postgis
+    postgres_fdw
+    pgvector
+    pgpcre

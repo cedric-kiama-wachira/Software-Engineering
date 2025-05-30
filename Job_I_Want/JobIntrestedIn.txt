@@ -1,0 +1,51 @@
+magine being part of a team that helps shape the future of workspaces and services at one of the world's most innovative companies. As a key player in the Global Workplace Services (GWS) organization, you'll have the opportunity to provide analytical and strategic guidance that drives business outcomes and fuels Meta's success.
+In this role, you'll be instrumental in helping facilities and culinary leadership make informed, data-driven decisions that impact thousands of employees worldwide. By analyzing complex data sets and identifying trends, you'll uncover insights that inform the development of world-class workplaces and services that meet the diverse needs of our global workforce.
+
+As a member of the GWS team, you'll be part of a dynamic and forward-thinking organization that is dedicated to creating environments that inspire creativity, collaboration, and productivity. With a focus on delivering high-quality services that exceed expectations, you'll play a critical role in shaping the employee experience and driving business results.
+
+Key Highlights:
+
+- Provide analytical and strategic guidance to drive business outcomes
+- Collaborate with facilities and culinary leadership to inform decision making
+- Analyze complex data sets to identify trends and opportunities
+- Contribute to the development of world-class workplaces and services
+- Be part of a dynamic and forward-thinking organization that is shaping the future of work
+
+Join us in unlocking the power of data-driven decision making and shaping the future of work at Meta!
+Data Analytics Lead, Global Services Responsibilities
+
+    Design, develop, and maintain data models, queries, reports, and visualizations to support data-driven decision-making and optimization of our global workplaces.
+    Lead data and analytics efforts within Global Workplace Services and cross-functional teams, collaborating with stakeholders to understand data needs and representing key insights in a meaningful way.
+    Optimize pipelines, dashboards, frameworks, and systems to facilitate easier development of data artifacts and streamline our data analytics processes.
+    Deploy better Analytics engineering principles to maintain team and partner alignment.
+    Mentor team members by providing actionable feedback and guidance, fostering continuous learning and improvement.
+
+Minimum Qualifications
+
+    Bachelor's degree in a directly related field, or equivalent practical experience.
+    8+ years of work experience involving analytical rigor as typically seen in functions like finance, data science, strategy, business operations, or related fields (or 6+ years of analysis work experience with Masters degree)
+    Advanced SQL skills with experience working with large datasets
+    Experience with data querying languages (e.g., SQL), data visualization tools (e.g., Tableau), ETL, and data modeling.
+    Demonstrated analytical skills, including both qualitative and quantitative analysis techniques (e.g., regression analysis, cluster analysis, hypothesis testing)
+    Experience initiating and completing analytical projects with minimal guidance, and present technical content to non-technical audiences and leadership
+
+Preferred Qualifications
+
+    Graduate degree in Mathematics, Statistics, a relevant technical field, or equivalent practical experience in data analytics field.
+    Proven experience in data analysis, reporting, and visualization, including merging disparate data sets, identifying correlations, and presenting findings in various formats.
+    Proficient in at least one programming language (e.g., Python, R).
+    Experience working in fast-paced, dynamic environments with a focus on operations and facilities management, preferably in a global organization with multiple locations.
+
+For those who live in or expect to work from California if hired for this position, please click here for additional information.
+About Meta
+Meta builds technologies that help people connect, find communities, and grow businesses. When Facebook launched in 2004, it changed the way people connect. Apps like Messenger, Instagram and WhatsApp further empowered billions around the world. Now, Meta is moving beyond 2D screens toward immersive experiences like augmented and virtual reality to help build the next evolution in social technology. People who choose to build their careers by building with us at Meta help shape a future that will take us beyond what digital connection makes possible today—beyond the constraints of screens, the limits of distance, and even the rules of physics.
+
+$122,000/year to $177,000/year + bonus + equity + benefits
+
+Individual compensation is determined by skills, qualifications, experience, and location. Compensation details listed in this posting reflect the base hourly rate, monthly rate, or annual salary only, and do not include bonus, equity or sales incentives, if applicable. In addition to base compensation, Meta offers benefits. Learn more about benefits at Meta. 
+
+
+Equal Employment Opportunity
+Meta is proud to be an Equal Employment Opportunity employer. We do not discriminate based upon race, religion, color, national origin, sex (including pregnancy, childbirth, reproductive health decisions, or related medical conditions), sexual orientation, gender identity, gender expression, age, status as a protected veteran, status as an individual with a disability, genetic information, political views or activity, or other applicable legally protected characteristics. You may view our Equal Employment Opportunity notice here.
+
+Meta is committed to providing reasonable accommodations for qualified individuals with disabilities and disabled veterans in our job application procedures. If you need assistance or an accommodation due to a disability, fill out the Accommodations request form. 

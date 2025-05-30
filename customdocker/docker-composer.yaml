@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  postgres:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
+        - VCS_REF=$(git rev-parse --short HEAD)
+        - VERSION=2.19.3-slim
+    image: pg17-4-timescaledb:2.19.3-slim
+    container_name: postgres-timescaledb
+    environment:
+      - POSTGRES_PASSWORD_FILE=/run/secrets/postgres_password
+      - PGBACKREST_CIPHER_PASS_FILE=/run/secrets/pgbackrest_cipher_pass
+      - TZ=UTC
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/17/main
+      - pgbackrest_conf:/etc/pgbackrest
+      - pgbackrest_data:/var/lib/pgbackrest
+      - pgbackrest_logs:/var/log/pgbackrest
+    secrets:
+      - postgres_password
+      - pgbackrest_cipher_pass
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 4G
+    security_opt:
+      - no-new-privileges:true
+    user: postgres
+    restart: unless-stopped
+
+secrets:
+  postgres_password:
+    file: ./secrets/postgres_password.txt
+  pgbackrest_cipher_pass:
+    file: ./secrets/pgbackrest_cipher_pass.txt
+
+volumes:
+  pg_data:
+    driver: local
+  pgbackrest_conf:
+    driver: local
+  pgbackrest_data:
+    driver: local
+  pgbackrest_logs:
+    driver: local

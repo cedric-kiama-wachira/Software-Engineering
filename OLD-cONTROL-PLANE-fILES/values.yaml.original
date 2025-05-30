@@ -1,0 +1,134 @@
+---
+config:
+  kubeProxyReplacement: partial 
+  kubeProxyReplacementHealthzBindAddr: ""
+  kubeProxyReplacementStrictArp: true
+  enableIPv4Masquerade: true
+  enableIPv6Masquerade: false
+  enableBPFMasquerade: true
+  tunnel: vxlan 
+  autoDirectNodeRoutes: true
+  bpf:
+    hostLegacyRouting: false
+
+ipam:
+  mode: kubernetes
+  operator:
+    clusterPoolIPv4PodCIDR: 10.244.0.0/16  # Matches kubeadm podSubnet
+
+ipv4:
+  enabled: true
+ipv6:
+  enabled: false
+
+k8s:
+  requireIPv4PodCIDR: true
+  requireIPv6PodCIDR: false
+  serviceHost: "135.181.102.58"  # Control plane endpoint
+  servicePort: 6443
+
+hubble:
+  enabled: true
+  relay:
+    enabled: true
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: "500m"
+        memory: "256Mi"
+  ui:
+    enabled: true
+    ingress:
+      enabled: false  # Enable later with Ingress controller
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: "500m"
+        memory: "256Mi"
+
+operator:
+  replicas: 3  # HA across 3 control plane nodes
+  rollingUpdate:
+    maxUnavailable: 1
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: "500m"
+      memory: "256Mi"
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+              - key: io.cilium/app
+                operator: In
+                values:
+                  - operator
+          topologyKey: kubernetes.io/hostname
+  image:
+    repository: quay.io/cilium/operator
+    tag: v1.17.3
+    pullPolicy: IfNotPresent
+
+bandwidthManager:
+  enabled: true
+  mode: edt
+
+bpf:
+  masquerade: true
+  hostRouting: true
+
+loadBalancer:
+  algorithm: maglev
+  acceleration: disabled
+
+hostServices:
+  enabled: true
+  protocols:
+    - tcp
+    - udp
+
+externalIPs:
+  enabled: true
+
+nodePort:
+  enabled: true
+  bindProtection: true
+
+affinity:
+  podAntiAffinity:
+    preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 100
+        podAffinityTerm:
+          labelSelector:
+            matchExpressions:
+              - key: k8s-app
+                operator: In
+                values:
+                  - cilium
+          topologyKey: kubernetes.io/hostname
+
+resources:
+  limits:
+    cpu: "2"
+    memory: 2Gi
+  requests:
+    cpu: 100m
+    memory: 512Mi
+
+prometheus:
+  enabled: true
+  port: 9090
+  serviceMonitor:
+    enabled: false  # Enable after installing Prometheus operator
+
+image:
+  repository: quay.io/cilium/cilium
+  tag: v1.17.3
+  pullPolicy: IfNotPresent
