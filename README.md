@@ -155,4 +155,5 @@ Need to finish up on a couple of things today...
 
 Adding more services.
 
+Docker config for K8s
 
