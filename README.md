@@ -163,13 +163,13 @@ Golang Development.
 
 Certifications for Infrastructure Professionals:
 
-NVIDIA-Certified Associate: AI Infrastructure and Operations (NCA-AIIO) 
-NVIDIA-Certified Professional: AI Infrastructure (NCP-AII) 
-NVIDIA-Certified Professional: AI Operations (NCP-AIO) 
-NVIDIA-Certified Professional: AI Networking (NCP-AIN) 
+NVIDIA-Certified Associate: AI Infrastructure and Operations (NCA-AIIO). 
+NVIDIA-Certified Professional: AI Infrastructure (NCP-AII). 
+NVIDIA-Certified Professional: AI Operations (NCP-AIO). 
+NVIDIA-Certified Professional: AI Networking (NCP-AIN). 
 
 Certifications for Developers:
 
-NVIDIA-Certified Associate: Generative AI and LLMs (NCA-GENL) 
-NVIDIA-Certified Associate: Multimodal Generative AI (NCA-GENM) 
-NVIDIA-Certified Professional: Accelerated Data Science (NCP-ADS)
+NVIDIA-Certified Associate: Generative AI and LLMs (NCA-GENL). 
+NVIDIA-Certified Associate: Multimodal Generative AI (NCA-GENM). 
+NVIDIA-Certified Professional: Accelerated Data Science (NCP-ADS).
