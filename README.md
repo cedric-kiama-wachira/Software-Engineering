@@ -30,7 +30,7 @@ Changing the configs for ssl again.
 
 Time to get this exams:
 
-Curriculum
+The Curriculum of it all:
 
 Open Source Curriculum for CNCF Certification Courses
 
