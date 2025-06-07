@@ -173,3 +173,7 @@ Certifications for Developers:
 NVIDIA-Certified Associate: Generative AI and LLMs (NCA-GENL) 
 NVIDIA-Certified Associate: Multimodal Generative AI (NCA-GENM) 
 NVIDIA-Certified Professional: Accelerated Data Science (NCP-ADS)
+
+Structures, Methods and Interfaces.
+
+
