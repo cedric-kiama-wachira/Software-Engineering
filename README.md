@@ -177,3 +177,8 @@ NVIDIA-Certified Professional: Accelerated Data Science (NCP-ADS)
 Structures, Methods and Interfaces.
 
 Focused on Terraform and Ansible for my side project.
+
+Terraform on Localhost is done now to implement it on Cloud.
+
+Ongoing Ansible playbooks.
+
