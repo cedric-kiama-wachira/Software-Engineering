@@ -180,5 +180,5 @@ Focused on Terraform and Ansible for my side project.
 
 Terraform on Localhost is done now to implement it on Cloud.
 
-Ongoing Ansible playbooks.
+Ongoing Ansible playbooks. Review and procedure.
 
