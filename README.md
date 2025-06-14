@@ -185,3 +185,5 @@ Ongoing Ansible playbooks. Review and procedure.
 Exploring SQL and Web Development in golang.
 
 Linux the hard way. Commands commands all the way.
+
+Git playground.
