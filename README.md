@@ -183,3 +183,5 @@ Terraform on Localhost is done now to implement it on Cloud.
 Ongoing Ansible playbooks. Review and procedure.
 
 Exploring SQL and Web Development in golang.
+
+Linux the hard way. Commands commands all the way.
