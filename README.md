@@ -188,4 +188,4 @@ Linux the hard way. Commands commands all the way.
 
 Git playground.
 
-Hardcore SQL DIMENSIONAL DATA MODELING
+Hardcore SQL DIMENSIONAL DATA MODELING. Reviewd Fact Modeling.
