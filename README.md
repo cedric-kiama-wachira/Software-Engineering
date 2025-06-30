@@ -191,3 +191,5 @@ Git playground.
 Hardcore SQL DIMENSIONAL DATA MODELING. Reviewd Fact Modeling.
 
 pREPARING FOR lfcs EXAM.
+
+LFCS exam readiness plus local openshift setup.
