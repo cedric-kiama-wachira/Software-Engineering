@@ -193,3 +193,5 @@ Hardcore SQL DIMENSIONAL DATA MODELING. Reviewd Fact Modeling.
 pREPARING FOR lfcs EXAM.
 
 LFCS exam readiness plus local openshift setup.
+
+LFCS exam prep going well, did fact_data_modeling.
