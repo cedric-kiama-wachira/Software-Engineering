@@ -195,3 +195,5 @@ pREPARING FOR lfcs EXAM.
 LFCS exam readiness plus local openshift setup.
 
 LFCS exam prep going well, did fact_data_modeling.
+
+Setting up a new K8S native cluster.
